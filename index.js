@@ -134,3 +134,15 @@ bot.on('end', () => {
 bot.on('error', err => {
   console.log("Bot error:", err);
 });
+// --- ADD THIS AT THE BOTTOM OF index.js ---
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send('✅ AFK Bot is running on Render!');
+});
+
+app.listen(PORT, () => {
+  console.log(🌐 Web server running on port ${PORT});
+});
