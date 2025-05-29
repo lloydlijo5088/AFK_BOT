@@ -2,9 +2,9 @@ const mineflayer = require('mineflayer');
 const { pathfinder, Movements, goals } = require('mineflayer-pathfinder');
 
 const bot = mineflayer.createBot({
-  host: 'hyrax.aternos.host',
-  port: 31369,
-  username: 'AFK_Theo',
+  host: 'batfish.aternos.host',
+  port: 56208,
+  username: '1_Theo',
   auth: 'offline'
 });
 
