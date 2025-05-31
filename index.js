@@ -5,7 +5,7 @@ let bot;
 
 function createBot() {
   bot = mineflayer.createBot({
-    host: 'indianskimmer.aternos.host',
+    host: 'hawkfish.aternos.host',
     port: 31369,
     username: '1_Theo',
     auth: 'offline'
