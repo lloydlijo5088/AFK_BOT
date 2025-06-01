@@ -1,4 +1,5 @@
 const mineflayer = require('mineflayer');
+const { pathfinder, Movements } = require('mineflayer-pathfinder');
 const bot = mineflayer.createBot({
   host: 'fangtooth.aternos.host',
   port: 31369,
