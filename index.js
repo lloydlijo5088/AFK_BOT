@@ -1,3 +1,4 @@
+const mineflayer = require('mineflayer');
 const bot = mineflayer.createBot({
   host: 'fangtooth.aternos.host',
   port: 31369,
