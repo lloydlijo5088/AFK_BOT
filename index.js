@@ -127,6 +127,33 @@ function createBot() {
     }
 
     setInterval(randomMovement, 15000); // Runs one random movement every 15 seconds
+           // Random logout/relogin logic
+    const minTime = 2.5 * 60 * 60 * 1000; // 2.5 hours
+    const maxTime = 3.5 * 60 * 60 * 1000; // 3.5 hours
+    const randomLogoutDelay = Math.floor(Math.random() * (maxTime - minTime)) + minTime;
+
+    setTimeout(() => {
+      console.log("🕒 Logging out for scheduled cooldown...");
+      bot.quit("Routine logout");
+
+      const relogDelay = Math.floor(Math.random() * 10000) + 10000; // 10–20 sec
+      setTimeout(() => {
+        console.log("🔁 Reconnecting bot...");
+        createBot();
+      }, relogDelay);
+
+    }, randomLogoutDelay);
+  });
+
+  bot.on('end', () => {
+    console.log("❌ Bot disconnected. Reconnecting...");
+    setTimeout(() => process.exit(1), 1000);
+  });
+
+  bot.on('error', err => {
+    console.log("Bot error:", err);
+  });
+}
 
 // Initial bot launch
 createBot();
@@ -141,5 +168,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🌐 Web server running on port ${PORT}`);
-});
+  console.log(🌐 Web server running on port ${PORT});
+})
